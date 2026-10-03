@@ -1,23 +1,23 @@
 # Case Study – Smart House CyberDefense
 
 ## Resumo
-Incidente envolvendo câmera IP, Smart Lock e assistente de voz.
+Ataque coordenado envolvendo três dispositivos IoT críticos.
 
 ## Evidências
-- Logins suspeitos
-- Alterações de configuração
-- Unlock remoto
-- Comandos maliciosos
-- Pivoting IoT
+Logs de autenticação
+Unlock remoto
+Comando malicioso
+Alterações de configuração
+IoCs correlacionados
 
 ## Análise
-Atacante obteve acesso inicial via credenciais fracas, escalou controle sobre dispositivos IoT e executou ações físicas na residência.
+Atacante utilizou credenciais fracas, APIs expostas e permissões excessivas.
 
 ## Conclusão
-Ambientes domésticos exigem segurança equivalente a ambientes corporativos quando dispositivos IoT controlam elementos críticos.
+Ambientes IoT domésticos exigem segurança corporativa.
 
 ## Recomendações
-- MFA
-- Hardening IoT
-- Segmentação
-- Monitoramento contínuo
+MFA
+Hardening
+Segmentação
+Monitoramento contínuo
