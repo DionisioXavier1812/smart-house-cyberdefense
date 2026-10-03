@@ -1,6 +1,6 @@
 # Dionisio Xavier
 
-## ?? Smart House CyberDefense
+🏠 Smart House CyberDefense
 
 [![Status](https://img.shields.io/badge/status-active-green)]()
 [![Focus](https://img.shields.io/badge/focus-cyber%20defense-red)]()
