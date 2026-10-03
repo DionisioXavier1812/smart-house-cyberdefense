@@ -1,85 +1,42 @@
-# Ambiente 2 – Intrusão em Smart Lock
+# Ambiente 2 – Smart Lock
 
-## Sobre o Cenário
+Descrição:
+Fechadura controlada via app.
 
-Fechadura inteligente controlada via aplicativo e painel web, integrada ao hub de automação.
+Arquitetura:
+IoT VLAN -> SmartLock -> Hub
 
-## Arquitetura
+Cadeia:
+1 painel descoberto
+2 credenciais fracas
+3 unlock remoto
 
-- Smart Lock conectada à rede IoT.
-- Painel de controle via web/app.
-- Hub de automação registrando eventos de abertura/fechamento.
-- Logs centralizados.
+Incidente:
+Destravamento indevido
 
-## Cadeia de Ataque
+Impacto:
+Risco físico
 
-1. Descoberta do painel de controle.
-2. Exploração de credenciais fracas.
-3. Acesso ao painel.
-4. Comando de destravar a fechadura.
-5. Possível acesso físico à residência.
+Logs:
+unlock remoto
 
-## Incidente
+IoCs:
+201.55.19.77
 
-Atacante destrava a fechadura inteligente remotamente.
+MITRE:
+T1059, T1021
 
-## Impacto
+Timeline:
+T1 unlock
 
-- Comprometimento de segurança física.
-- Risco de invasão domiciliar.
-- Exposição de bens materiais e pessoas.
+Evidências:
+smartlock.log
 
-## Logs Simulados
+Playbook:
+resetar credenciais
 
-- Login suspeito no painel.
-- Comando de destravar em horário incomum.
-- IP de origem desconhecido.
-- Falhas de login anteriores.
+Lições:
+MFA
 
-## Indicadores de Comprometimento (IoCs)
-
-- IP de origem.
-- Horário de comando.
-- User-agent.
-- Endpoint de API utilizado.
-
-## MITRE ATT&CK
-
-- T1078 – Valid Accounts
-- T1059 – Command Execution
-- T1021 – Remote Services
-
-## Timeline DFIR
-
-- T1 – Detecção de comando suspeito.
-- T2 – Verificação de origem do acesso.
-- T3 – Análise de histórico de logins.
-- T4 – Confirmação de acesso indevido.
-- T5 – Contenção (revogar acesso, alterar credenciais).
-
-## Evidências
-
-- Logs de comando de destravar.
-- Logs de autenticação.
-- Registros de API.
-
-## Playbook
-
-1. Identificar comando suspeito.
-2. Verificar IP e contexto.
-3. Alterar credenciais da Smart Lock.
-4. Revisar permissões de acesso.
-5. Registrar incidente e reforçar políticas.
-
-## Lições Aprendidas
-
-- Dispositivos físicos conectados exigem segurança máxima.
-- Logs de comando devem ser monitorados em tempo real.
-- Credenciais fracas são inaceitáveis em dispositivos críticos.
-
-## Recomendações
-
-- MFA quando possível.
-- Senhas fortes.
-- Monitoramento contínuo.
-- Alertas em tempo real para comandos críticos.
+Recomendações:
+alertas críticos
