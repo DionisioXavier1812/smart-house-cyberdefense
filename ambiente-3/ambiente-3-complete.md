@@ -1,42 +1,49 @@
-# Ambiente 3 – Assistente de Voz
+# Ambiente 3 – Assistente de Voz Abusado
 
-Descrição:
-Assistente integrado ao hub.
+## Sobre o Cenário
+Assistente de voz integrado ao hub IoT, com comandos críticos habilitados.
 
-Arquitetura:
-Hub -> VoiceAssistant -> IoT
+## Arquitetura
+Hub IoT ? Voice Assistant ? IoT Devices
 
-Cadeia:
-1 conta comprometida
-2 comandos maliciosos
-3 pivoting
+## Cadeia de Ataque
+1. Comprometimento da conta  
+2. Execução de comando malicioso  
+3. Pivoting para outros dispositivos  
 
-Incidente:
-Ações indevidas
+## Incidente
+Atacante executou comandos sensíveis via voz.
 
-Impacto:
-Controle da casa
+## Impacto
+Controle indevido de dispositivos IoT.
 
-Logs:
-unlock via voz
+## Logs Simulados
+Oct 03 11:24:02 assistant-voice event: Command executed: "unlock front door"  
 
-IoCs:
-comando suspeito
+## IoCs
+Comando suspeito: unlock front door  
+User-Agent: "VoiceAPI/3.2"  
+Hash suspeito: 8a1c9fbbd2e3f1a9c4e8d1f2b9a7c3e1  
 
-MITRE:
-T1041, T1059
+## MITRE ATT&CK
+T1041 – Exfiltration  
+T1059 – Command Execution  
 
-Timeline:
-T1 comando
+## Timeline DFIR
+11:24 – Comando malicioso  
+11:25 – Evento no hub  
 
-Evidências:
-assistant.log
+## Evidências
+- voice.log  
+- hub-events.log  
 
-Playbook:
-revogar sessões
+## Playbook
+1. Revogar sessões  
+2. Resetar integrações  
+3. Revalidar comandos críticos  
 
-Lições:
-alertas de voz
+## Lições Aprendidas
+- Comandos críticos devem exigir confirmação  
 
-Recomendações:
-hardening IoT
+## Recomendações
+- Hardening IoT  
